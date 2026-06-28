@@ -17,12 +17,10 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- SAĞ ÜSTTEKİ DEPLOY VE MENÜ BUTONLARINI GİZLEME ---
 st.markdown("""
     <style>
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    header {visibility: hidden;}
     stDeployButton {display:none;}
     .stDeployButton {display: none !important;}
     </style>
