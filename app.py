@@ -52,7 +52,7 @@ aylar = ["Ocak  ", "Şubat  ", "Mart  ", "Nisan  ", "Mayıs  ", "Haziran  ", "Te
 if st.session_state.sayfa == "Ana Sayfa":
     st.title("Hasat Hafızası Bilgi Sistemi")
     st.markdown("#### *Çukurova Bölgesi 10 Yıllık Dijital Tarım Arşivi*")
-    st.markdown("**Sloganımız:** Geleceğin Tarımı, Geçmişin Hafızasında Saklıdır! Doğru Veri, Sürdürülebilir Hasat.")
+    st.markdown("**Sloganımız:** Toprağın geçmişi, tarımın geleceği: Hasat Hafızası")
     st.markdown("---")
     
     col_m1, col_m2, col_m3 = st.columns(3)
