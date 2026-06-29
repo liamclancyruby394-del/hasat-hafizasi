@@ -10,27 +10,25 @@ st.set_page_config(page_title="Hasat Hafızası", page_icon="🧑🏻‍🌾", l
 
 st.markdown("""
     <style>
-    /* Üst barı komple uçur, sadece sol taraftaki menü açma okunu zorunlu görünür yap */
-    header { visibility: hidden; }
-    button[data-testid="collapsedControl"] { visibility: visible !important; }
-    
-    /* Buton tasarımı */
-    div.stButton > button { width: 100% !important; height: 50px !important; border-radius: 10px !important; font-weight: bold !important; }
+    .stDeployButton {display: none !important;}
+    div.stButton > button {
+        width: 100% !important; height: 50px !important; border-radius: 10px !important;
+        font-weight: bold !important; transition: all 0.3s ease; margin-bottom: 10px;
+    }
     div.stButton > button:hover { background-color: #4CAF50 !important; color: white !important; }
     </style>
     """, unsafe_allow_html=True)
+
 st.sidebar.markdown("### HASAT HAFIZASI\n---")
 
 if 'sayfa' not in st.session_state:
     st.session_state.sayfa = "Ana Sayfa"
 
-# Sayfa Geçiş Butonları
 if st.sidebar.button("Ana Sayfa"): st.session_state.sayfa = "Ana Sayfa"
 if st.sidebar.button("Hakkımızda & İletişim"): st.session_state.sayfa = "Hakkımızda & İletişim"
 if st.sidebar.button("Yıllar Veri Arşivi"): st.session_state.sayfa = "Yıllar Veri Arşivi"
 if st.sidebar.button("Geleceğe Yönelik Tahmin"): st.session_state.sayfa = "Geleceğe Yönelik Tahmin"
 
-# Takım adını alta sabitlemek için boşluk
 st.sidebar.markdown("<br><br><br><br><br><br><br><br><br><hr><h3 style='text-align: center; color: #4CAF50;'>TARERAL Takımı</h3>", unsafe_allow_html=True)
 
 veri_sozlugu = {
@@ -71,7 +69,7 @@ elif st.session_state.sayfa == "Yıllar Veri Arşivi":
     st.title("Geçmiş Yılların Veri Arşivi (2014 - 2024)")
     secilen_yil = st.selectbox("İncelemek istediğiniz geçmiş yılı seçiniz:", list(range(2014, 2025)))
     
-    st.header(f"📅 {secilen_yil} Yılı İncelemesi")
+    st.header(f" {secilen_yil} Yılı İncelemesi")
     col1, col2 = st.columns(2)
     
     with col1:
