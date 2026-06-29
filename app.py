@@ -10,16 +10,15 @@ st.set_page_config(page_title="Hasat Hafızası", page_icon="🧑🏻‍🌾", l
 
 st.markdown("""
     <style>
-    #MainMenu, footer, header {visibility: hidden;}
-    .stDeployButton {display: none !important;}
-    div.stButton > button {
-        width: 100% !important; height: 50px !important; border-radius: 10px !important;
-        font-weight: bold !important; transition: all 0.3s ease; margin-bottom: 10px;
-    }
+    /* Üst barı komple uçur, sadece sol taraftaki menü açma okunu zorunlu görünür yap */
+    header { visibility: hidden; }
+    button[data-testid="collapsedControl"] { visibility: visible !important; }
+    
+    /* Buton tasarımı */
+    div.stButton > button { width: 100% !important; height: 50px !important; border-radius: 10px !important; font-weight: bold !important; }
     div.stButton > button:hover { background-color: #4CAF50 !important; color: white !important; }
     </style>
     """, unsafe_allow_html=True)
-
 st.sidebar.markdown("### HASAT HAFIZASI\n---")
 
 if 'sayfa' not in st.session_state:
@@ -52,7 +51,7 @@ aylar = ["Ocak  ", "Şubat  ", "Mart  ", "Nisan  ", "Mayıs  ", "Haziran  ", "Te
 if st.session_state.sayfa == "Ana Sayfa":
     st.title("Hasat Hafızası Bilgi Sistemi")
     st.markdown("#### *Çukurova Bölgesi 10 Yıllık Dijital Tarım Arşivi*")
-    st.markdown("**Sloganımız:** Toprağın geçmişi, tarımın geleceği: Hasat Hafızası")
+    st.markdown("Toprağın geçmişi, tarımın geleceği: Hasat Hafızası")
     st.markdown("---")
     
     col_m1, col_m2, col_m3 = st.columns(3)
